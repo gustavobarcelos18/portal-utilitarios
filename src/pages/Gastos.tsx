@@ -10,10 +10,10 @@ interface Lancamento extends LancamentoDados {
 }
 
 export default function Gastos() {
-  // guarda os lançamentos de gastos/entradas
+  //guarda os lançamentos de gastos/entradas
   const [lancamentos, setLancamentos] = useState<Lancamento[]>([]);
 
-  // formulário com validação para lançamentos
+  //formulário com validação para lançamentos
   const {
     register,
     handleSubmit,
@@ -21,7 +21,7 @@ export default function Gastos() {
     formState: { errors }
   } = useForm<LancamentoDados>({ resolver: zodResolver(lancamentoSchema) });
 
-  // carregar dados do localStorage no início
+  //carregar dados do localStorage no início
   useEffect(() => {
     const sal = localStorage.getItem('lancamentos');
     if (sal) {
@@ -29,24 +29,24 @@ export default function Gastos() {
     }
   }, []);
 
-  // salvar sempre que a lista muda
+  //salvar sempre que a lista muda
   useEffect(() => {
     localStorage.setItem('lancamentos', JSON.stringify(lancamentos));
   }, [lancamentos]);
 
-  // adiciona um lançamento novo e limpa o formulário
+  //adiciona um lançamento novo e limpa o formulário
   function adicionar(data: LancamentoDados) {
     const novo = { ...data, id: Date.now().toString() };
     setLancamentos((prev: Lancamento[]) => [...prev, novo]);
     reset();
   }
 
-  // remove um lançamento pelo id
+  //remove um lançamento pelo id
   function remover(id: string) {
     setLancamentos((prev) => prev.filter((e) => e.id !== id));
   }
 
-  // calcula o saldo a partir dos lançamentos: entradas somam e saídas subtraem
+  //calcula o saldo a partir dos lançamentos: entradas somam e saídas subtraem
   const saldo = lancamentos.reduce((acc, item) => {
     if (item.tipo === 'Entrada') return acc + item.valor;
     return acc - item.valor;

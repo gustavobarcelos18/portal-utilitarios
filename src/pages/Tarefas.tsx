@@ -10,10 +10,10 @@ interface Tarefa extends TarefaDados {
 }
 
 export default function Tarefas() {
-  // aqui uso useState para guardar a lista de tarefas
+  //aqui uso useState para guardar a lista de tarefas
   const [tarefas, setTarefas] = useState<Tarefa[]>([]);
 
-  // useForm com zodResolver para validar o formulário
+  //useForm com zodResolver para validar o formulário
   const {
     register,
     handleSubmit,
@@ -21,7 +21,7 @@ export default function Tarefas() {
     formState: { errors }
   } = useForm<TarefaDados>({ resolver: zodResolver(tarefaSchema) });
 
-  // carrego as tarefas do localStorage quando o componente monta
+  //carrego as tarefas do localStorage quando o componente monta
   useEffect(() => {
     const salva = localStorage.getItem('tarefas');
     if (salva) {
@@ -29,7 +29,7 @@ export default function Tarefas() {
     }
   }, []);
 
-  // quando tarefas mudar, salvo no localStorage para não perder
+  //quando tarefas mudar, salvo no localStorage para não perder
   useEffect(() => {
     localStorage.setItem('tarefas', JSON.stringify(tarefas));
   }, [tarefas]);
