@@ -1,4 +1,4 @@
-import Cartao from '../components/Cartao';
+import Cartao from '../componentes/Cartao';
 
 export default function Home() {
   //página inicial com cartões que levam para cada funcionalidade

@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { contatoSchema, ContatoDados } from '../schemas/contatoSchema';
-import Botao from '../components/Botao';
-import Campo from '../components/Campo';
+import Botao from '../componentes/Botao';
+import Campo from '../componentes/Campo';
 
 interface Contato extends ContatoDados {
   id: string;

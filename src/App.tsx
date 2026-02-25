@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Tarefas from './pages/Tarefas';
-import Contatos from './pages/Contatos';
-import Gastos from './pages/Gastos';
+import Navbar from './componentes/Navbar';
+import Home from './paginas/Home';
+import Tarefas from './paginas/Tarefas';
+import Contatos from './paginas/Contatos';
+import Gastos from './paginas/Gastos';
 
 export default function App() {
   //aqui eu uso o BrowserRouter para ter várias páginas

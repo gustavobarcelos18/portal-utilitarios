@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { tarefaSchema, TarefaDados } from '../schemas/tarefaSchema';
-import Botao from '../components/Botao';
-import Campo from '../components/Campo';
+import Botao from '../componentes/Botao';
+import Campo from '../componentes/Campo';
 
 interface Tarefa extends TarefaDados {
   id: string;

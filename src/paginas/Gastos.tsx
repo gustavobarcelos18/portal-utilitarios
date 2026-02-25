@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { lancamentoSchema, LancamentoDados } from '../schemas/lancamentoSchema';
-import Botao from '../components/Botao';
-import Campo from '../components/Campo';
+import Botao from '../componentes/Botao';
+import Campo from '../componentes/Campo';
 
 interface Lancamento extends LancamentoDados {
   id: string;
